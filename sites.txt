@@ -1,0 +1,10 @@
+https://github.com/warderer/json-server-jwt
+
+https://ecommerce-json-jwt.onrender.com/
+
+https://class.cesarguerra.mx/devf-frontend-avanzado
+
+comando para instalar vite rapido: npm create vite@latest 01-react-forms -- --template react
+
+https://www.cesarguerra.mx/configuracion-rapida-de-eslint-con-standard-js-para-proyectos-de-javascript-y-de-react-con-vite-js/
+
