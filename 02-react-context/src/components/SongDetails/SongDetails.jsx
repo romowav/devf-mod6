@@ -16,7 +16,6 @@ const SongDetails = () => {
             )
           : <h1>Selecciona una cancion</h1>
       }
-
     </>
   )
 }
