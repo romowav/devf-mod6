@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <nav className='header'>
       <a className='header__logo' href='/'>LOGO</a>
-      <ul className='headre__nav-list'>
+      <ul className='header__nav-list'>
         <li className='headre__list-item'>
           <a href='/' className='header__item-link header__item-link--is-active'>Home</a>
         </li>
