@@ -9,16 +9,16 @@ const Header = () => {
           <a href='/' className='header__item-link header__item-link--is-active'>Home</a>
         </li>
         <li className='headre__list-item'>
-          <a href='/' className='header__item-link'>Dashboard</a>
+          <a href='/dashboard' className='header__item-link'>Dashboard</a>
         </li>
         <li className='headre__list-item'>
-          <a href='/' className='header__item-link'>Login</a>
+          <a href='/login' className='header__item-link'>Login</a>
         </li>
         <li className='headre__list-item'>
-          <a href='/' className='header__item-link'>Secret</a>
+          <a href='/secret' className='header__item-link'>Secret</a>
         </li>
         <li className='headre__list-item'>
-          <a href='/' className='header__item-link'>SignUp</a>
+          <a href='/signup' className='header__item-link'>SignUp</a>
         </li>
       </ul>
     </nav>
