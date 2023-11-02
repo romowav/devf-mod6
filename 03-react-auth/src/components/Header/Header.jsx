@@ -1,24 +1,30 @@
+import { NavLink } from 'react-router-dom'
 import './Header.scss'
 
 const Header = () => {
+  const linkIsActive = (isActive) => {
+    return isActive ? 'header__item-link--is-active' : 'header__item-link'
+  }
   return (
     <nav className='header'>
-      <a className='header__logo' href='/'>LOGO</a>
+      <NavLink className='header__logo' to='/'>
+        LOGO
+      </NavLink>
       <ul className='header__nav-list'>
         <li className='headre__list-item'>
-          <a href='/' className='header__item-link header__item-link--is-active'>Home</a>
+          <NavLink to='/' className={({ isActive }) => linkIsActive(isActive)}>Home</NavLink>
         </li>
         <li className='headre__list-item'>
-          <a href='/dashboard' className='header__item-link'>Dashboard</a>
+          <NavLink to='/dashboard' className={({ isActive }) => linkIsActive(isActive)}>Dashboard</NavLink>
         </li>
         <li className='headre__list-item'>
-          <a href='/login' className='header__item-link'>Login</a>
+          <NavLink to='/login' className={({ isActive }) => linkIsActive(isActive)}>Login</NavLink>
         </li>
         <li className='headre__list-item'>
-          <a href='/secret' className='header__item-link'>Secret</a>
+          <NavLink to='/secret' className={({ isActive }) => linkIsActive(isActive)}>Secret</NavLink>
         </li>
         <li className='headre__list-item'>
-          <a href='/signup' className='header__item-link'>SignUp</a>
+          <NavLink to='/signup' className={({ isActive }) => linkIsActive(isActive)}>SignUp</NavLink>
         </li>
       </ul>
     </nav>
