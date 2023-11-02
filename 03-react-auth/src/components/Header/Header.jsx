@@ -3,7 +3,7 @@ import './Header.scss'
 
 const Header = () => {
   const linkIsActive = (isActive) => {
-    return isActive ? 'header__item-link--is-active' : 'header__item-link'
+    return isActive ? 'header__item-link header__item-link--is-active' : 'header__item-link'
   }
   return (
     <nav className='header'>
