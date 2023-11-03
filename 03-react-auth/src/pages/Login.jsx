@@ -18,6 +18,7 @@ const Login = () => {
       const response = await loginUserService(data)
       if (response.status === 200) {
         // console.log('Usuario inicio sesion exitosamente', response.data.token)
+
         // SetItem guarda el token en el localStorage
         localStorage.setItem('token', response.data.token)
         navigate('/')
