@@ -1,15 +1,31 @@
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { loginUserService } from '@/services/userServices'
 import '@/styles/form.css'
 import logo from '@/assets/react.svg'
 
 const Login = () => {
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) => {
+    try {
+      const response = await loginUserService(data)
+      if (response.status === 200) {
+        // console.log('Usuario inicio sesion exitosamente', response.data.token)
+        // SetItem guarda el token en el localStorage
+        localStorage.setItem('token', response.data.token)
+        navigate('/')
+      }
+    } catch (error) {
+      console.log('Ocurrio un error en Login', error.message)
+    }
+  }
 
   return (
     <main className='form-signin w-100 m-auto'>
