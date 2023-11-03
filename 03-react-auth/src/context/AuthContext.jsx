@@ -9,6 +9,7 @@ const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false)
   const [userPayload, setUserPayload] = useState(null) // datos del usuario sacados de token decodificado (payload)
   const login = (token) => {
+    // SetItem guarda el token en el localStorage
     localStorage.setItem('token', token)
     const decoded = jwtDecode(token)
     setUserPayload(decoded)
