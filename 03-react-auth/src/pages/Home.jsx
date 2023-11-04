@@ -16,7 +16,7 @@ const Home = () => {
       }
     }
     getItemData()
-  }, [token])
+  }, [])
   return (
     <>
       <h1>Home</h1>
