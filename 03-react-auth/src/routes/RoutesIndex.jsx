@@ -11,6 +11,7 @@ const RoutesIndex = () => {
       <Route path='/signup' element={<SignUp />} />
       <Route path='/dashboard' element={isAuth ? <Dashboard /> : <Navigate to='/login' />} />
       <Route path='/secret' element={isAuth ? <Secret /> : <Navigate to='/login' />} />
+      <Route path='/' />
     </Routes>
   )
 }

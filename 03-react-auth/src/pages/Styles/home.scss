@@ -1,0 +1,14 @@
+.card {
+  padding: 5px;
+
+  &__img-container{
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.card-foto{
+  max-height: 18rem;
+  object-fit: cover;
+}

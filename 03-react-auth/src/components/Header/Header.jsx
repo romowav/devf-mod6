@@ -14,7 +14,7 @@ const Header = () => {
         LOGO
       </NavLink>
       <ul className='header__nav-list'>
-        <li className='headre__list-item'>
+        <li className='header__list-item'>
           <NavLink to='/' className={({ isActive }) => linkIsActive(isActive)}>
             Home
           </NavLink>
@@ -27,7 +27,7 @@ const Header = () => {
         {isAuth
           ? (
             <>
-              <li className='headre__list-item'>
+              <li className='header__list-item'>
                 <NavLink to='/secret' className={({ isActive }) => linkIsActive(isActive)}>
                   Secret
                 </NavLink>
