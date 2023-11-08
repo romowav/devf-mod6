@@ -21,6 +21,7 @@ const Home = () => {
   }, [])
   return (
     <>
+      <h1>Home</h1>
       <div className='d-flex flex-row flex-wrap justify-content-center'>
         {/* Crear logica para crear cards con informacion de cada item que ya estamos llamando de la API */}
 
