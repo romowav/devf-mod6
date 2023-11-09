@@ -34,6 +34,5 @@ function SongProvider ({ children }) {
   )
 }
 
-
 // exportar las funciones del provider y el contexto para hacerlos accesibles
 export { SongProvider, SongContext }
