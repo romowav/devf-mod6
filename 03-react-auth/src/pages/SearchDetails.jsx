@@ -1,30 +1,16 @@
-import { useState, useEffect } from 'react'
-import { getAllItemService } from '@/services/itemServices'
-import '@/pages/Styles/home.scss'
+import { useSearchContext } from '@/hooks/useSearchContext'
 import { Link } from 'react-router-dom'
+import React from 'react'
 
-const Home = () => {
-  const [itemData, setItemData] = useState([])
+const SearchDetails = () => {
+  const { dataContext } = useSearchContext()
 
-  useEffect(() => {
-    const getItemData = async () => {
-      try {
-        const response = await getAllItemService()
-        if (response.status === 200) {
-          setItemData(response.data)
-        }
-      } catch (error) {
-        console.log('Ocurrio un error en Dashboard', error.message)
-      }
-    }
-    getItemData()
-  }, [])
   return (
     <>
-      <h1>Home</h1>
+      <h1>Search Results</h1>
       <div className='d-flex flex-row flex-wrap justify-content-center'>
 
-        {itemData && itemData.map((product) => (
+        {dataContext && dataContext.map((product) => (
           <div className='card m-4' style={{ width: '18rem' }} key={product.id}>
             <div className='card__img-container'>
               <img src={product.image} className='card-img-top card-foto' alt={product.product_name} />
@@ -47,4 +33,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default SearchDetails
