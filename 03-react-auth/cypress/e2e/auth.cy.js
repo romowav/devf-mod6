@@ -10,9 +10,7 @@ describe('template spec', () => {
 
     cy.visit('/login')
 
-    cy.get('input[name="email"]').type('drstrange@marvel.com')
-    cy.get('input[name="password"]').type('multiverso')
-    cy.get('button[type="submit"]').click()
+    cy.doLogin('drstrange@marvel.com', 'multiverso')
 
     cy.wait('@login')
 
@@ -25,14 +23,12 @@ describe('template spec', () => {
 
     cy.visit('/login')
 
-    cy.get('input[name="email"]').type('superman@dc.com')
-    cy.get('input[name="password"]').type('superman')
-    cy.get('button[type="submit"]').click()
+    cy.doLogin('superman@dc.com', 'superman')
 
     cy.wait('@login')
 
     cy.get('nav > ul > li:last').click()
-    
+
     cy.get('h1')
       .contains('Home')
   })
