@@ -6,7 +6,7 @@ const ReactHookForm = () => {
     console.log('Send Data', data)
   }
   // API: https://dummyjson.com/docs/users
-  const { register, handleSubmit, watch, formState: { errors } } = useForm()
+  const { register, handleSubmit, formState: { errors } } = useForm()
 
   return (
     <div className='login'>
