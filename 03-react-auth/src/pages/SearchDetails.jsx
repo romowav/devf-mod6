@@ -1,9 +1,10 @@
 import { useSearchContext } from '@/hooks/useSearchContext'
+
 import { Link } from 'react-router-dom'
 import React from 'react'
 
 const SearchDetails = () => {
-  const { dataContext } = useSearchContext()
+  const { dataContext, setSelectedItem } = useSearchContext()
 
   return (
     <>
@@ -22,8 +23,8 @@ const SearchDetails = () => {
                   {product.description}
                 </p>
               </div>
-              <Link to='/' className='btn btn-primary position-absolute bottom-0 start-0 m-3'>
-                Add to cart
+              <Link to='/item-details' className='btn btn-success position-absolute bottom-0 start-0 m-3' onClick={() => setSelectedItem(product.id)}>
+                Ver detalles
               </Link>
             </div>
           </div>

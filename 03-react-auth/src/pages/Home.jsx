@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { getAllItemService } from '@/services/itemServices'
+import { useSearchContext } from '@/hooks/useSearchContext'
 import '@/pages/Styles/home.scss'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
   const [itemData, setItemData] = useState([])
-
+  const { setSelectedItem } = useSearchContext()
   useEffect(() => {
     const getItemData = async () => {
       try {
@@ -19,11 +20,11 @@ const Home = () => {
     }
     getItemData()
   }, [])
+
   return (
     <>
       <h1>Home</h1>
       <div className='d-flex flex-row flex-wrap justify-content-center'>
-
         {itemData && itemData.map((product) => (
           <div className='card m-4' style={{ width: '18rem' }} key={product.id}>
             <div className='card__img-container'>
@@ -36,8 +37,8 @@ const Home = () => {
                   {product.description}
                 </p>
               </div>
-              <Link to='/' className='btn btn-primary position-absolute bottom-0 start-0 m-3'>
-                Add to cart
+              <Link to='/item-details' className='btn btn-success position-absolute bottom-0 start-0 m-3' onClick={() => setSelectedItem(product.id)}>
+                Ver detalles
               </Link>
             </div>
           </div>
