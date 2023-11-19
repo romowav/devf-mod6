@@ -1,6 +1,6 @@
 import { getOneItemService } from '@/services/itemServices'
 import { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const ItemDetails = () => {
   const [oneItemData, setOneItemData] = useState([])
@@ -35,9 +35,9 @@ const ItemDetails = () => {
                 {oneItemData.description}
               </p>
             </div>
-            <Link to='/item/:id' className='btn btn-success position-absolute bottom-0 start-0 m-3'>
-              Ver detalles
-            </Link>
+            <button className='btn btn-secondary position-absolute bottom-0 start-0 m-3'>
+              Agregar a carrito
+            </button>
           </div>
         </div>
       </div>

@@ -24,8 +24,11 @@ const SearchDetails = () => {
                 </p>
               </div>
               <Link to={'/item/' + product.id} className='btn btn-success position-absolute bottom-0 start-0 m-3' onClick={() => setSelectedItem(product.id)}>
-                Ver detalles
+                Detalles
               </Link>
+              <button className='btn btn-secondary position-absolute bottom-0 end-0 m-3'>
+                Agregar a carrito
+              </button>
             </div>
           </div>
         ))}
