@@ -1,16 +1,15 @@
-import { useSearchContext } from '@/hooks/useSearchContext'
 import { getOneItemService } from '@/services/itemServices'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const ItemDetails = () => {
-  const { selectedItem } = useSearchContext()
   const [oneItemData, setOneItemData] = useState([])
+  const params = useParams()
 
   useEffect(() => {
     const getOneItemData = async () => {
       try {
-        const response = await getOneItemService(selectedItem)
+        const response = await getOneItemService(params.id)
         if (response.status === 200) {
           setOneItemData(response.data)
         }
@@ -19,7 +18,7 @@ const ItemDetails = () => {
       }
     }
     getOneItemData()
-  }, [])
+  }, [params.id])
 
   return (
     <>
@@ -36,7 +35,7 @@ const ItemDetails = () => {
                 {oneItemData.description}
               </p>
             </div>
-            <Link to='/item-details' className='btn btn-success position-absolute bottom-0 start-0 m-3'>
+            <Link to='/item/:id' className='btn btn-success position-absolute bottom-0 start-0 m-3'>
               Ver detalles
             </Link>
           </div>

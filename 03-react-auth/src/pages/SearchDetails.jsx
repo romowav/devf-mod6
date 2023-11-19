@@ -23,7 +23,7 @@ const SearchDetails = () => {
                   {product.description}
                 </p>
               </div>
-              <Link to='/item-details' className='btn btn-success position-absolute bottom-0 start-0 m-3' onClick={() => setSelectedItem(product.id)}>
+              <Link to={'/item/' + product.id} className='btn btn-success position-absolute bottom-0 start-0 m-3' onClick={() => setSelectedItem(product.id)}>
                 Ver detalles
               </Link>
             </div>
