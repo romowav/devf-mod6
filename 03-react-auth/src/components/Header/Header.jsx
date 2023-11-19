@@ -27,10 +27,9 @@ const Header = () => {
   const handleChange = (value) => {
     setSearch(value)
   }
-  const handleKeyDown = (value) => {
-    if (value.key === 'Enter') {
-      document.getElementById('busqueda').click()
-    }
+  const handleKeyDown = () => {
+    searchData(search)
+    document.getElementById('busqueda').click()
   }
 
   return (
@@ -39,9 +38,11 @@ const Header = () => {
         LOGO
       </NavLink>
       <div className='d-flex' role='search'>
-        <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search' value={search} onChange={(e) => handleChange(e.target.value)} onKeyDown={() => handleKeyDown} />
-        <NavLink to='/search-details' className='btn btn-outline-success' onClick={() => searchData(search)} id='busqueda'>
-          Search
+        <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search' value={search} onChange={(e) => handleChange(e.target.value)} id='searchInput' onKeyDown={e => e.key === 'Enter' ? handleKeyDown() : ''} />
+        <NavLink to='/search-details' id='busqueda'>
+          <button className='btn btn-outline-success' onClick={() => searchData(search)}>
+            Search
+          </button>
         </NavLink>
       </div>
       <ul className='header__nav-list'>
